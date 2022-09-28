@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header'
+import AddContact from './components/AddContact'
+import ContactLict from './components/ContactList'
 
 function App() {
+  const contacts = [
+    {
+      id: 1,
+      name: "Dasun",
+      email: "dasun@mylinex.com"
+    },
+    {
+      id: 2,
+      name: "Gaya",
+      email: "gaya2@gmail.com"
+    }
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='ui container'>
+      <Header />
+      <AddContact />
+      <ContactLict contacts = { contacts } />
     </div>
   );
 }
